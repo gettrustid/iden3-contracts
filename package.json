@@ -156,5 +156,9 @@
     "elliptic": "^6.6.0",
     "cookie": "^1.0.1",
     "axios": "^1.8.3"
+  },
+  "dependencies": {
+    "@custom-0xpolygonid/js-sdk": "github:gettrustid/js-sdk",
+    "js-iden3-core-custom": "github:gettrustid/js-iden3-core"
   }
 }

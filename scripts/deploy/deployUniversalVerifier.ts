@@ -28,10 +28,10 @@ async function main() {
     // "UniversalVerifierTestWrapper_ManyResponsesPerUserAndRequest",
   );
 
-  await verifyContract(
-    await universalVerifier.getAddress(),
-    contractsInfo.UNIVERSAL_VERIFIER.verificationOpts,
-  );
+  // await verifyContract(
+  //   await universalVerifier.getAddress(),
+  //   contractsInfo.UNIVERSAL_VERIFIER.verificationOpts,
+  // );
 
   const networkName = hre.network.name;
   const pathOutputJson = path.join(

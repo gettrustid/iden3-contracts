@@ -6,6 +6,7 @@ import {
   networks,
   STATE_ADDRESS_POLYGON_AMOY,
   STATE_ADDRESS_POLYGON_MAINNET,
+  STATE_ADDRESS_TRUSTID_MAINNET,
 } from "./constants";
 import { poseidonContract } from "circomlibjs";
 
@@ -143,6 +144,10 @@ export async function verifyContract(
 export function getProviders() {
   return [
     {
+      network: networks.TRUSTID_MAINNET.name,
+      rpcUrl: process.env.TRUSTID_MAIN_RPC_URL as string,
+    },
+    {
       network: networks.PRIVADO_TESTNET.name,
       rpcUrl: process.env.PRIVADO_TESTNET_RPC_URL as string,
     },
@@ -220,13 +225,16 @@ export async function getStateContractAddress(chainId?: number): Promise<string>
   }
 
   let stateContractAddress = contractsInfo.STATE.unifiedAddress;
+  if (chainId === networks.TRUSTID_MAINNET.chainId) {
+    stateContractAddress = STATE_ADDRESS_TRUSTID_MAINNET;
+  }
   if (chainId === networks.POLYGON_AMOY.chainId) {
     stateContractAddress = STATE_ADDRESS_POLYGON_AMOY;
   }
   if (chainId === networks.POLYGON_MAINNET.chainId) {
     stateContractAddress = STATE_ADDRESS_POLYGON_MAINNET;
   }
-
+  console.log("\nStateContractAddress is : \n", stateContractAddress);
   return stateContractAddress;
 }
 

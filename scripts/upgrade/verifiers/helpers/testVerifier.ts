@@ -7,7 +7,7 @@ import {
   packV3ValidatorParams,
   packValidatorParams,
 } from "../../../../test/utils/validator-pack-utils";
-import { Blockchain, BytesHelper, DID, DidMethod, NetworkId } from "@iden3/js-iden3-core";
+import { Blockchain, BytesHelper, DID, DidMethod, NetworkId } from "js-iden3-core-custom";
 import hre from "hardhat";
 import {
   initCircuitStorage,
@@ -38,7 +38,7 @@ import {
   ProofType,
   PROTOCOL_CONSTANTS,
   ZeroKnowledgeProofRequest,
-} from "@0xpolygonid/js-sdk";
+} from "@custom-0xpolygonid/js-sdk";
 import { ProofData } from "@iden3/js-jwz";
 import { Groth16VerifierType } from "../../../../helpers/DeployHelper";
 import { getChainId } from "../../../../helpers/helperUtils";
@@ -141,6 +141,13 @@ function getParamsFromChainId(chainId: number) {
   let networkId: string;
 
   switch (chainId) {
+    //TODO: requires @iden3/js-iden3-core change
+    case 87878:
+      rpcUrl = process.env.TRUSTID_MAIN_RPC_URL as string;
+      method = DidMethod.PolygonId;
+      blockchain = Blockchain.TrustID;
+      networkId = NetworkId.Main;
+      break;
     case 80002:
       rpcUrl = process.env.POLYGON_AMOY_RPC_URL as string;
       method = DidMethod.Iden3;

@@ -43,7 +43,7 @@ import {
   AbstractPrivateKeyStore,
   CredentialStatusPublisherRegistry,
   Iden3SmtRhsCredentialStatusPublisher,
-} from "@0xpolygonid/js-sdk";
+} from "@custom-0xpolygonid/js-sdk";
 import path from "path";
 
 const circuitsFolder = "./circuits";

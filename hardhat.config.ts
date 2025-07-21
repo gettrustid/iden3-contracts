@@ -19,6 +19,12 @@ const DEFAULT_ACCOUNTS: any = {
   count: 20,
 };
 
+const privateKeys = [
+  process.env.PK_1 as string,
+  process.env.PK_2 as string,
+  process.env.PK_3 as string,
+];
+
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
 task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
@@ -50,6 +56,7 @@ const config: HardhatUserConfig = {
             enabled: true,
             runs: 80,
           },
+          evmVersion: "london",
         },
       },
       "contracts/test-helpers/VerifierTestWrapper.sol": {
@@ -127,6 +134,12 @@ const config: HardhatUserConfig = {
     },
   },
   networks: {
+    "trustid-mainnet": {
+      chainId: 87878,
+      url: `${process.env.TRUSTID_MAIN_RPC_URL}`,
+      accounts: privateKeys,
+      // ledgerAccounts: [`${process.env.LEDGER_ACCOUNT}`],
+    },
     "privado-mainnet": {
       chainId: 21000,
       url: `${process.env.PRIVADO_MAINNET_RPC_URL}`,
@@ -278,7 +291,8 @@ const config: HardhatUserConfig = {
       "zkevm-mainnet": process.env.ZKEVM_EXPLORER_API_KEY || "",
       "billions-test": "test",
       "billions-main": "main",
-      "base": process.env.BASE_EXPLORER_API_KEY || "",
+      base: process.env.BASE_EXPLORER_API_KEY || "",
+      "trustid-main": "main",
     },
     customChains: [
       {
@@ -337,6 +351,15 @@ const config: HardhatUserConfig = {
           browserURL: "https://docs.polygonscan.com/polygon-zkevm",
         },
       },
+      //TODO: configure
+      // {
+      //   network: "trustid-mainnet",
+      //   chainId: 87878,
+      //   urls: {
+      //     apiURL: "https://api-zkevm.polygonscan.com/api",
+      //     browserURL: "https://docs.blockscout.com",
+      //   },
+      // },
     ],
   },
 };

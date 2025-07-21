@@ -1,0 +1,10 @@
+{
+ "poseidon1": "0x2E2276adE6754CAe7eF20De859727d76587c68ec",
+ "poseidon2": "0xD312EEf2c393593304D7367dbfa179f384f7F480",
+ "poseidon3": "0x209841f717Af6680C508DBDeB93A5aa00B02a336",
+ "poseidon4": "0xcb3165962A97F2AD2d82BA8fa8604B071395130e",
+ "smtLib": "0x8354486Cd3a80614b328b14c01abddEf43adCa1a",
+ "network": "trustid-mainnet",
+ "chainId": 87878,
+ "deployStrategy": "basic"
+}

@@ -1,0 +1,9 @@
+{
+ "proxyAdminOwnerAddress": "0xD99167C9Dd2654851ec26d6996c51FC2c8a64966",
+ "identityTreeStore": "0x0F3B8946c83804862b34401bBa29f99246efb0AF",
+ "poseidon2ContractAddress": "0xD312EEf2c393593304D7367dbfa179f384f7F480",
+ "poseidon3ContractAddress": "0x209841f717Af6680C508DBDeB93A5aa00B02a336",
+ "network": "trustid-mainnet",
+ "chainId": 87878,
+ "deployStrategy": "basic"
+}

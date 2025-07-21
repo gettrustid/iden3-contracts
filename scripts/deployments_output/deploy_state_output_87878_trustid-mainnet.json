@@ -1,0 +1,9 @@
+{
+ "proxyAdminOwnerAddress": "0xD99167C9Dd2654851ec26d6996c51FC2c8a64966",
+ "state": "0xEE812701740fD337bB17ca7b59d39cBDB2dE0800",
+ "stateLib": "0x4b4E776949863d76e35A0a3f04f5e5CaE9AcD4e5",
+ "crossChainProofValidator": "0x6eEeFa9C92230234EB90b0621EA7Be33a4b0C422",
+ "network": "trustid-mainnet",
+ "chainId": 87878,
+ "deployStrategy": "basic"
+}

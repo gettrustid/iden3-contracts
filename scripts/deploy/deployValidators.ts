@@ -13,6 +13,7 @@ async function main() {
   const config = getConfig();
   const chainId = await getChainId();
 
+  //Deploy Basic strategy -> make sure it deploys all the types
   const validators: ValidatorType[] = ["mtpV2", "sigV2", "v3", "lmq", "authV2", "ethIdentity"];
 
   const deployStrategy: "basic" | "create2" =
@@ -30,7 +31,8 @@ async function main() {
       deployStrategy,
     );
 
-    await verifyContract(await validator.getAddress(), deployHelper.getValidatorVerification(v));
+    //TODO: uncomment if verification setup on trustid chain
+    // await verifyContract(await validator.getAddress(), deployHelper.getValidatorVerification(v));
 
     // only add validators info if groth16VerifierWrapper is deployed
     validatorsInfo.push({
@@ -39,12 +41,13 @@ async function main() {
       groth16verifier: await groth16VerifierWrapper?.getAddress(),
     });
 
-    if (groth16VerifierWrapper) {
-      await verifyContract(
-        await groth16VerifierWrapper.getAddress(),
-        deployHelper.getGroth16VerifierWrapperVerification(v),
-      );
-    }
+    //TODO: uncomment if verification setup on trustid chain
+    // if (groth16VerifierWrapper) {
+    //   await verifyContract(
+    //     await groth16VerifierWrapper.getAddress(),
+    //     deployHelper.getGroth16VerifierWrapperVerification(v),
+    //   );
+    // }
   }
 
   // only save the output if there are validators deployed

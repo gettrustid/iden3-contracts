@@ -87,7 +87,12 @@ export const chainIdInfoMap: Map<number, ChainIdInfo> = new Map()
     idType: "0x0148",
     networkType: "test",
     oracleSigningAddress: ORACLE_SIGNING_ADDRESS_PRODUCTION,
-  }); // linea-sepolia
+  }) // linea-sepolia
+  .set(87878, {
+    idType: "0x0150",
+    networkType: "main",
+    oracleSigningAddress: ORACLE_SIGNING_ADDRESS_PRODUCTION,
+  }); // trustid
 
 export const networks = Object.freeze({
   PRIVADO_TESTNET: { name: "Privado Testnet", chainId: 21001 },
@@ -102,10 +107,12 @@ export const networks = Object.freeze({
   ZKEVM_MAINNET: { name: "Zkevm Mainnet", chainId: 1101 },
   LINEA_SEPOLIA: { name: "Linea Sepolia", chainId: 59141 },
   LINEA_MAINNET: { name: "Linea Mainnet", chainId: 59144 },
+  TRUSTID_MAINNET: { name: "Trust ID Mainnet", chainId: 87878 },
 });
 
 export const STATE_ADDRESS_POLYGON_AMOY = "0x1a4cC30f2aA0377b0c3bc9848766D90cb4404124";
 export const STATE_ADDRESS_POLYGON_MAINNET = "0x624ce98D2d27b20b8f8d521723Df8fC4db71D79D";
+export const STATE_ADDRESS_TRUSTID_MAINNET = "0xEE812701740fD337bB17ca7b59d39cBDB2dE0800";
 
 export const VALIDATOR_TYPES = Object.freeze({
   MTP_V2: "mtpV2",
@@ -307,31 +314,32 @@ export const contractsInfo = Object.freeze({
   },
   SMT_LIB: {
     name: "SmtLib",
-    unifiedAddress: "0x682364078e26C1626abD2B95109D2019E241F0F6",
+    unifiedAddress: "0x8354486Cd3a80614b328b14c01abddEf43adCa1a",
     create2Calldata: "",
     verificationOpts: {
       constructorArgsImplementation: [],
       libraries: {},
     },
   },
+  //NOTE: Modified to match TrustId Basic Deployed Addresses
   POSEIDON_1: {
     name: "PoseidonUnit1L",
-    unifiedAddress: "0xC72D76D7271924a2AD54a19D216640FeA3d138d9",
+    unifiedAddress: "0x2E2276adE6754CAe7eF20De859727d76587c68ec",
     create2Calldata: "",
   },
   POSEIDON_2: {
     name: "PoseidonUnit2L",
-    unifiedAddress: "0x72F721D9D5f91353B505207C63B56cF3d9447edB",
+    unifiedAddress: "0xD312EEf2c393593304D7367dbfa179f384f7F480",
     create2Calldata: "",
   },
   POSEIDON_3: {
     name: "PoseidonUnit3L",
-    unifiedAddress: "0x5Bc89782d5eBF62663Df7Ce5fb4bc7408926A240",
+    unifiedAddress: "0x209841f717Af6680C508DBDeB93A5aa00B02a336",
     create2Calldata: "",
   },
   POSEIDON_4: {
     name: "PoseidonUnit4L",
-    unifiedAddress: "0x0695cF2c6dfc438a4E40508741888198A6ccacC2",
+    unifiedAddress: "0xcb3165962A97F2AD2d82BA8fa8604B071395130e",
     create2Calldata: "",
   },
   GROTH16_VERIFIER_STATE_TRANSITION: {

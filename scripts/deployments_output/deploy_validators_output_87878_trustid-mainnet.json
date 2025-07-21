@@ -1,0 +1,37 @@
+{
+ "proxyAdminOwnerAddress": "0xD99167C9Dd2654851ec26d6996c51FC2c8a64966",
+ "validatorsInfo": [
+  {
+   "validatorType": "mtpV2",
+   "validator": "0xc19A6830e41a202B9A92977C98598945f0a575bf",
+   "groth16verifier": "0x9a944B90e9B8fa440FEA7187a189ac50410C7846"
+  },
+  {
+   "validatorType": "sigV2",
+   "validator": "0x39FeeA16dA1f467DFA8511393dD68e1DF176993c",
+   "groth16verifier": "0x238a2FA4395776791cb31776B325E95f853bC80b"
+  },
+  {
+   "validatorType": "v3",
+   "validator": "0x961D15CF1d61b19b532a02F0563a7Db74A9DA1E2",
+   "groth16verifier": "0x000244050f2a659B0FD735704a493a8A5d723E06"
+  },
+  {
+   "validatorType": "lmq",
+   "validator": "0x94182Fed6Aa34f06efC117Bf95B92D31181DCb27",
+   "groth16verifier": "0x81a58703af2901289d45b37DE027274971a2d53b"
+  },
+  {
+   "validatorType": "authV2",
+   "validator": "0x04064D722c19612b48484e2f6F0665b19464f74f",
+   "groth16verifier": "0x66739BC543CF0D4F84f7d307bfD6c581a39262C8"
+  },
+  {
+   "validatorType": "ethIdentity",
+   "validator": "0xcF3Db59C37FAe1e82Ea497d3ebaD8116158B1B8F"
+  }
+ ],
+ "network": "trustid-mainnet",
+ "chainId": 87878,
+ "deployStrategy": "basic"
+}

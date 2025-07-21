@@ -93,6 +93,7 @@ ZKEVM_CARDONA_RPC_URL=<rpc url for zkevm cardona>
 LINEA_MAINNET_RPC_URL=<rpc url for linea mainnet>
 LINEA_SEPOLIA_RPC_URL=<rpc url for linea sepolia>
 BASE_MAINNET_RPC_URL=<rpc url for base mainnet>
+TRUSTID_MAINNET_RPC_URL=<rpc url for trustid mainnet>
 ```
 
 Then run the deployment scripts:
